@@ -6,9 +6,9 @@ using System.Web;
 /// <summary>
 /// Summary description for Class1
 /// </summary>
-public class Person
+public class Customer
 {
-    public Person()
+    public Customer()
     {
         //
         // TODO: Add constructor logic here
