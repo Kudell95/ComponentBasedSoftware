@@ -5,14 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class CIS2003_Module_3_Default : Page
+public partial class CIS2003_Assignment_Default : System.Web.UI.Page
 {
-
-    public Person currentCustomer = new Person();
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+
     }
-
-
 }

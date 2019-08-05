@@ -1,0 +1,121 @@
+﻿<?xml version="1.0"?>
+
+<products>
+  <!--Guitars Section-->
+  <product category="Guitars">
+    <name>Acoustic Guitar</name>
+    <price>400</price>
+    <brand>StoneBridge</brand>
+    <slug>guitars_stonebridge_acoustic</slug>
+  </product>
+  
+  <product category="Guitars">
+    <name>Bass Guitar</name>
+    <price>900</price>
+    <brand>Fender</brand>
+    <slug>guitars_fender_bass</slug>
+  </product>
+  
+  <product category="Guitars">
+    <name>Les Paul</name>
+    <price>1200</price>
+    <brand>Gibson</brand>
+    <slug>guitars_gibson_lespaul</slug>
+  </product>
+  
+  <product category="Guitars">
+    <name>Telecaster</name>
+    <price>1200</price>
+    <brand>Fender</brand>
+    <slug>guitars_fender_telecaster</slug>
+  </product>
+  
+  <!--Keys section-->
+  <product category="Keys">
+    <name>Synthesizer</name>
+    <price>2000</price>
+    <brand>Prophet</brand>
+    <slug>keys_prophet_synth</slug>
+  </product>
+  
+  <product category="Keys">
+    <name>Grand Piano</name>
+    <price>20000</price>
+    <brand>Steinway</brand>
+    <slug>keys_steinway_grand</slug>
+  </product>
+  
+  <product category="Keys">
+    <name>Synthesizer</name>
+    <price>800</price>
+    <brand>Yamaha</brand>
+    <slug>keys_yamaha_synth</slug>
+  </product>
+  
+  <product category="Keys">
+    <name>Upright</name>
+    <price>4000</price>
+    <brand>Yamaha</brand>
+    <slug>keys_yamaha_upright</slug>
+  </product>
+  
+  
+   <!--Other Instruments Section-->
+  <product category="Other">
+    <name>Drum Machine</name>
+    <price>900</price>
+    <brand>Novation</brand>
+    <slug>other_novation_drum_machine</slug>
+  </product>
+  
+  <product category="Other">
+    <name>Drum set</name>
+    <price>2100</price>
+    <brand>Pearl</brand>
+    <slug>other_pearl_drums</slug>
+  </product>
+
+  <product category="Other">
+    <name>Saxaphone</name>
+    <price>1100</price>
+    <brand>Yamaha</brand>
+    <slug>other_yamaha_saxaphone</slug>
+  </product>
+  
+  <product category="Other">
+    <name>Violin</name>
+    <price>600</price>
+    <brand>Stentor</brand>
+    <slug>other_stentor_violin</slug>
+  </product>
+
+  <!--Accessories Section -->
+  <product category="Accessories">
+    <name>Amplifier</name>
+    <price>900</price>
+    <brand>Marshall</brand>
+    <slug>accessory_marshall_amp</slug>
+  </product>
+  
+  <product category="Accessories">
+    <name>Headphones</name>
+    <price>150</price>
+    <brand>Audio-Technica</brand>
+    <slug>accessory_audiotechnica_headphones</slug>
+  </product>
+  <product category="Accessories">
+    <name>Microphone</name>
+    <price>450</price>
+    <brand>Sennheiser</brand>
+    <slug>accessory_sennheiser_microphone</slug>
+  </product>
+  <product category="Accessories">
+    <name>DJ Deck</name>
+    <price>240</price>
+    <brand>Pioneer</brand>
+    <slug>accessory_pioneer_djdeck</slug>
+  </product>
+ 
+  
+  
+</products>
