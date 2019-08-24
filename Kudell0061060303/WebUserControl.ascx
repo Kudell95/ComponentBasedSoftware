@@ -23,17 +23,17 @@
                 <div class="navbar">
                   <a href="#home" id="Active">Home</a>
                   
-                  <div class="dropdown">
-                  <button class="dropbtn" onclick="myFunction()">Products
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                  <div class="dropdown-content" id="myDropdown">
-                    <a href="#">Guitars</a>
-                    <a href="#">Keys</a>
-                    <a href="#">Other Instruments</a>
-                    <a href="#">Accesories</a>
-                  </div>
-                  </div> 
+                      <div class="dropdown">
+                      <button class="dropbtn" onclick="myFunction()">Products
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                          <div class="dropdown-content" id="myDropdown">
+                            <a href="ProductsList.aspx?category=Guitars">Guitars</a>
+                            <a href="ProductsList.aspx?category=Keys">Keys</a>
+                            <a href="ProductsList.aspx?category=Other">Other Instruments</a>
+                            <a href="ProductsList.aspx?category=Accesories">Accesories</a>
+                          </div>
+                      </div> 
                 </div>
                 
 </div>

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="CIS2003_Kudell0061060303_Home" %>
-<%@ Register Src="WebUserControl.ascx" TagName="User" TagPrefix="TUser" %>
+<%@ Register Src="WebUserControl.ascx" TagName="navbar" TagPrefix="TUser" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,7 +15,7 @@
 
     <form id="form1" runat="server">
         <div>
-         <TUser:User ID="Header" runat="server" />                
+         <TUser:navbar ID="Header" runat="server" />
         </div>
     </form>
 </body>
