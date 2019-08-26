@@ -21,7 +21,7 @@
 
 <div id="NavMenu">
                 <div class="navbar">
-                  <a href="#home" id="Active">Home</a>
+                  <a href="Home.aspx" id="Active">Home</a>
                   
                       <div class="dropdown">
                       <button class="dropbtn" onclick="myFunction()">Products

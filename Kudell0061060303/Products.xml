@@ -3,6 +3,7 @@
 <products>
   <!--Guitars Section-->
   <product category="Guitars">
+    <productId>001</productId>
     <name>Acoustic Guitar</name>
     <price>400</price>
     <brand>StoneBridge</brand>
@@ -10,6 +11,7 @@
   </product>
   
   <product category="Guitars">
+    <productId>002</productId>
     <name>Bass Guitar</name>
     <price>900</price>
     <brand>Fender</brand>
@@ -17,6 +19,7 @@
   </product>
   
   <product category="Guitars">
+    <productId>003</productId>
     <name>Les Paul</name>
     <price>1200</price>
     <brand>Gibson</brand>
@@ -24,6 +27,7 @@
   </product>
   
   <product category="Guitars">
+    <productId>004</productId>
     <name>Telecaster</name>
     <price>1200</price>
     <brand>Fender</brand>
@@ -32,6 +36,7 @@
   
   <!--Keys section-->
   <product category="Keys">
+    <productId>005</productId>
     <name>Synthesizer</name>
     <price>2000</price>
     <brand>Prophet</brand>
@@ -39,6 +44,7 @@
   </product>
   
   <product category="Keys">
+    <productId>006</productId>
     <name>Grand Piano</name>
     <price>20000</price>
     <brand>Steinway</brand>
@@ -46,6 +52,7 @@
   </product>
   
   <product category="Keys">
+    <productId>007</productId>
     <name>Synthesizer</name>
     <price>800</price>
     <brand>Yamaha</brand>
@@ -53,6 +60,7 @@
   </product>
   
   <product category="Keys">
+    <productId>008</productId>
     <name>Upright</name>
     <price>4000</price>
     <brand>Yamaha</brand>
@@ -62,6 +70,7 @@
   
    <!--Other Instruments Section-->
   <product category="Other">
+    <productId>009</productId>
     <name>Drum Machine</name>
     <price>900</price>
     <brand>Novation</brand>
@@ -69,6 +78,7 @@
   </product>
   
   <product category="Other">
+    <productId>010</productId>
     <name>Drum set</name>
     <price>2100</price>
     <brand>Pearl</brand>
@@ -76,6 +86,7 @@
   </product>
 
   <product category="Other">
+    <productId>011</productId>
     <name>Saxaphone</name>
     <price>1100</price>
     <brand>Yamaha</brand>
@@ -83,6 +94,7 @@
   </product>
   
   <product category="Other">
+    <productId>012</productId>
     <name>Violin</name>
     <price>600</price>
     <brand>Stentor</brand>
@@ -91,6 +103,7 @@
 
   <!--Accessories Section -->
   <product category="Accessories">
+    <productId>013</productId>
     <name>Amplifier</name>
     <price>900</price>
     <brand>Marshall</brand>
@@ -98,18 +111,21 @@
   </product>
   
   <product category="Accessories">
+    <productId>014</productId>
     <name>Headphones</name>
     <price>150</price>
     <brand>Audio-Technica</brand>
     <slug>accessory_audiotechnica_headphones</slug>
   </product>
   <product category="Accessories">
+    <productId>015</productId>
     <name>Microphone</name>
     <price>450</price>
     <brand>Sennheiser</brand>
     <slug>accessory_sennheiser_microphone</slug>
   </product>
   <product category="Accessories">
+    <productId>016</productId>
     <name>DJ Deck</name>
     <price>240</price>
     <brand>Pioneer</brand>

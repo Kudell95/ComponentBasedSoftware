@@ -4,6 +4,7 @@
 >
 
     <xsl:param name="category" />
+    <xsl:param name="all" select='*'/>
     <xsl:output method="xml" indent="yes"/>
 
   
@@ -18,22 +19,34 @@
         <table width="100%" border="1">
           <THEAD>
             <TR>
-              <TD width="50%">
+              <TD width="25%">
                 <B>Category</B>
               </TD>
-              <TD width="50%">
-                <B>name</B>
+              <TD width="25%">
+                <B>Brand</B>
+              </TD>
+              <TD width="25%">
+                <B>Name</B>
+              </TD>
+              <TD width="25%">
+                <B>Price</B>
               </TD>
             </TR>
           </THEAD>
           <TBODY>
-            <xsl:for-each select="products/product[@category=$category]">
+            <xsl:for-each select="products/product[@category = $category ]">
               <TR>
-                <TD width="50%">
+                <TD width="25%">
                   <xsl:value-of select="@category" />
                 </TD>
-                <TD width="50%">
+                <TD width="25%">
+                  <xsl:value-of select="brand" />
+                </TD>
+                <TD width="25%">
                   <xsl:value-of select="name" />
+                </TD>
+                <TD width="25%">
+                  $<xsl:value-of select="price" />
                 </TD>
               </TR>
             </xsl:for-each>
