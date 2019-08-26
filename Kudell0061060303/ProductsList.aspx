@@ -5,13 +5,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        #Select1 {
+            height: 213px;
+            width: 691px;
+        }
+    </style>
 </head>
 <body>
+    
     <form id="form1" runat="server">
+     <TUser:navbar ID="Header" runat="server" />
+         
         <div>
-            <TUser:navbar ID="Header" runat="server" />
+           
             
+                       
         </div>
+         <div>
+             <hr />
+         </div>
+       
+         
+         <asp:Xml ID="Xml1" runat="server" DocumentSource="~/CIS2003/Kudell0061060303/Products.xml" TransformSource="~/CIS2003/Kudell0061060303/XSLTFile.xslt"></asp:Xml>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
     </form>
 </body>
 </html>

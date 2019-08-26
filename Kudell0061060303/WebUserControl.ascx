@@ -31,7 +31,7 @@
                             <a href="ProductsList.aspx?category=Guitars">Guitars</a>
                             <a href="ProductsList.aspx?category=Keys">Keys</a>
                             <a href="ProductsList.aspx?category=Other">Other Instruments</a>
-                            <a href="ProductsList.aspx?category=Accesories">Accesories</a>
+                            <a href="ProductsList.aspx?category=Accessories">Accessories</a>
                           </div>
                       </div> 
                 </div>
