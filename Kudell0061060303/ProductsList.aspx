@@ -27,7 +27,7 @@
          </div>
        
          
-         <asp:Xml ID="Xml1" runat="server" DocumentSource="~/CIS2003/Kudell0061060303/Products.xml" TransformSource="~/CIS2003/Kudell0061060303/productlist.xslt"></asp:Xml>
+         <asp:Xml ID="Xml1" runat="server" DocumentSource="~/Kudell0061060303/Products.xml" TransformSource="~/Kudell0061060303/productlist.xslt"></asp:Xml>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
     </form>
 </body>
