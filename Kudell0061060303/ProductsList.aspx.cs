@@ -18,7 +18,7 @@ public partial class Assignment_Default : System.Web.UI.Page
         //    cat = "*";
         //}
         XsltArgumentList xslArg = new XsltArgumentList();
-        xslArg.AddParam("category", "", "" + cat);
+        xslArg.AddParam("category", "", "" + cat); 
         this.Xml1.TransformArgumentList = xslArg;
     }
 
