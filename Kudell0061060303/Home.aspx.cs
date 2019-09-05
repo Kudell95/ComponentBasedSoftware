@@ -13,8 +13,16 @@ public partial class CIS2003_Kudell0061060303_Home : System.Web.UI.Page
     {
         //initialize cart
         ArrayList cart = new ArrayList();
+
+        if(Session["cart"] == null)
+        {
+            Session["cart"] = cart;
+        }
         
-        Session["cart"] = cart;
+        //Session["cart"] = cart;
+//ArrayList cart = new ArrayList();
+        
+//        Session["cart"] = cart;
 
        // ArrayList tempCart = new ArrayList();
         //tempCart = (ArrayList)Session["cart"];

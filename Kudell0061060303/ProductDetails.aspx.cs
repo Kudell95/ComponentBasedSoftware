@@ -17,8 +17,6 @@ public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Pag
     {
         //int pid_int;
         int price;
-        
-        
 
         //Load the xml document
         XmlDocument doc = new XmlDocument();
