@@ -7,9 +7,15 @@
     <title></title>
 </head>
 <body>
-    <TUser:navbar ID="Header" runat="server" />
+
     <form id="form1" runat="server">
-        <div>
+        <TUser:navbar ID="Header" runat="server" />
+        <br />
+        <div id="product_info">        
+        <asp:Xml ID="Xml1" runat="server" DocumentSource="~/Kudell0061060303/Products.xml" TransformSource="~/Kudell0061060303/details.xslt"></asp:Xml>
+        <br /> <br />    
+        <input type="button" id="Button1" runat="server" onServerClick="Button1_Click1" value="Add To Cart"/>
+            
         </div>
     </form>
 </body>

@@ -8,6 +8,7 @@
     <price>400</price>
     <brand>StoneBridge</brand>
     <slug>guitars_stonebridge_acoustic</slug>
+    <imgtype>.jpg</imgtype>
   </product>
   
   <product category="Guitars">
@@ -16,6 +17,7 @@
     <price>900</price>
     <brand>Fender</brand>
     <slug>guitars_fender_bass</slug>
+    <imgtype>.jpg</imgtype>
   </product>
   
   <product category="Guitars">
@@ -24,6 +26,7 @@
     <price>1200</price>
     <brand>Gibson</brand>
     <slug>guitars_gibson_lespaul</slug>
+    <imgtype>.jpg</imgtype>
   </product>
   
   <product category="Guitars">
@@ -32,6 +35,7 @@
     <price>1200</price>
     <brand>Fender</brand>
     <slug>guitars_fender_telecaster</slug>
+    <imgtype>.jpg</imgtype>
   </product>
   
   <!--Keys section-->
@@ -41,6 +45,7 @@
     <price>2000</price>
     <brand>Prophet</brand>
     <slug>keys_prophet_synth</slug>
+    <imgtype>.png</imgtype>
   </product>
   
   <product category="Keys">
@@ -49,6 +54,7 @@
     <price>20000</price>
     <brand>Steinway</brand>
     <slug>keys_steinway_grand</slug>
+    <imgtype>.png</imgtype>
   </product>
   
   <product category="Keys">
@@ -57,6 +63,7 @@
     <price>800</price>
     <brand>Yamaha</brand>
     <slug>keys_yamaha_synth</slug>
+    <imgtype>.jpg</imgtype>
   </product>
   
   <product category="Keys">
@@ -65,6 +72,7 @@
     <price>4000</price>
     <brand>Yamaha</brand>
     <slug>keys_yamaha_upright</slug>
+    <imgtype>.jpeg</imgtype>
   </product>
   
   
@@ -75,6 +83,7 @@
     <price>900</price>
     <brand>Novation</brand>
     <slug>other_novation_drum_machine</slug>
+    <imgtype>.jpg</imgtype>
   </product>
   
   <product category="Other">
@@ -83,6 +92,7 @@
     <price>2100</price>
     <brand>Pearl</brand>
     <slug>other_pearl_drums</slug>
+    <imgtype>.jpg</imgtype>
   </product>
 
   <product category="Other">
@@ -91,6 +101,7 @@
     <price>1100</price>
     <brand>Yamaha</brand>
     <slug>other_yamaha_saxaphone</slug>
+    <imgtype>.jpeg</imgtype>
   </product>
   
   <product category="Other">
@@ -99,6 +110,7 @@
     <price>600</price>
     <brand>Stentor</brand>
     <slug>other_stentor_violin</slug>
+    <imgtype>.jpeg</imgtype>
   </product>
 
   <!--Accessories Section -->
@@ -108,6 +120,7 @@
     <price>900</price>
     <brand>Marshall</brand>
     <slug>accessory_marshall_amp</slug>
+    <imgtype>.jpeg</imgtype>
   </product>
   
   <product category="Accessories">
@@ -116,6 +129,7 @@
     <price>150</price>
     <brand>Audio-Technica</brand>
     <slug>accessory_audiotechnica_headphones</slug>
+    <imgtype>.jpeg</imgtype>
   </product>
   <product category="Accessories">
     <productId>015</productId>
@@ -123,6 +137,7 @@
     <price>450</price>
     <brand>Sennheiser</brand>
     <slug>accessory_sennheiser_microphone</slug>
+    <imgtype>.jpeg</imgtype>
   </product>
   <product category="Accessories">
     <productId>016</productId>
@@ -130,6 +145,7 @@
     <price>240</price>
     <brand>Pioneer</brand>
     <slug>accessory_pioneer_djdeck</slug>
+    <imgtype>.jpeg</imgtype>
   </product>
  
   

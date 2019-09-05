@@ -1,0 +1,26 @@
+﻿* {
+    margin: 0;
+   padding: 0;
+}
+
+#buy {
+    Position: absolute;
+    float: right;
+    justify-content: flex-end;
+}
+
+#product_info {
+    padding-top: 1%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-style: outset;
+    margin: 0 auto;
+    width: 50%;
+}
+
+p {
+   
+    z-index: 1;
+    margin-right: 50%;
+}

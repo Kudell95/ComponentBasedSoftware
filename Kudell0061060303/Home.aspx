@@ -10,6 +10,15 @@
     
 
         
+    <style type="text/css">
+        .newStyle1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+        }
+    </style>
+    
+
+        
 </head>
 <body>
 
@@ -17,6 +26,15 @@
         <div>
          <TUser:navbar ID="Header" runat="server" />
         </div>
+        <div>
+        </div>
+        <p>
+            &nbsp;</p>
     </form>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <h3 style="text-align: center"><span class="newStyle1">Music Warehouse</span></h3>
 </body>
 </html>
