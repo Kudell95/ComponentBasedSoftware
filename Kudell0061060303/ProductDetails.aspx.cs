@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 using System.Xml.Xsl;
+using System.IO;
 
 
 public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Page
@@ -20,7 +21,7 @@ public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Pag
 
         //Load the xml document
         XmlDocument doc = new XmlDocument();
-        doc.Load("http://localhost:8080/Kudell0061060303/Products.xml");
+        doc.Load(Server.MapPath("Products.xml"));
         XmlNodeList elemList = doc.GetElementsByTagName("product");
         
         //loop through every node

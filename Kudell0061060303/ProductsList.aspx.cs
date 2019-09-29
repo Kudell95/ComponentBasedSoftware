@@ -12,11 +12,11 @@ public partial class Assignment_Default : System.Web.UI.Page
     {
         string cat = Request.QueryString["category"];
         
-        if (cat == null)
-        {
-        //    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')" + cat, true);
-           // cat = "Guitars|Keys";
-        }
+        //if (cat == null)
+        //{
+        //    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')" + cat, true);
+        //    //cat = "*";
+        //}
         XsltArgumentList xslArg = new XsltArgumentList();
         xslArg.AddParam("category", "", "" + cat); 
         this.Xml1.TransformArgumentList = xslArg;

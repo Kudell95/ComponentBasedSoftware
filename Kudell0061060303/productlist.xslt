@@ -37,7 +37,7 @@
             </TR>
           </THEAD>
           <TBODY>
-            <xsl:for-each select="products/product[@category = $category ]">
+            <xsl:for-each select="products/product[starts-with(@category, $category)]">
               
               
               <TR>
