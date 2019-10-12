@@ -17,7 +17,6 @@
     <form id="form1" runat="server">
      <TUser:navbar ID="Header" runat="server" />
          <br />
-         
          <asp:Xml ID="Xml1" runat="server" DocumentSource="~/Kudell0061060303/Products.xml" TransformSource="~/Kudell0061060303/productlist.xslt"></asp:Xml>
     </form>
 </body>

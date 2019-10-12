@@ -12,55 +12,28 @@ using System.IO;
 
 public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Page
 {
-    public Product currentProduct;
-    int pid_int;
-    private void GetProductById(string pid)
-    {
-        //int pid_int;
-        int price;
 
-        //Load the xml document
-        XmlDocument doc = new XmlDocument();
-        doc.Load(Server.MapPath("Products.xml"));
-        XmlNodeList elemList = doc.GetElementsByTagName("product");
-        
-        //loop through every node
-        for (int i = 0; i < elemList.Count; i++)
-        {
-            //if node contains the passed Product Id
-            if(elemList[i].InnerXml.Contains(pid))
-            {
-                //apply xml data to the current product object.
-                Int32.TryParse(elemList[i].ChildNodes[2].InnerText, out price);
-                //System.Diagnostics.Debug.WriteLine(elemList[i].ChildNodes[1].InnerText);
-                currentProduct = new Product(pid_int, elemList[i].Attributes["category"].Value, elemList[i].ChildNodes[1].InnerText, price);
+      ProductDetails details; // instantiate the details object, to load the information from the xml file.
 
-            }
-            
-            
-        }
-    }
 
-    protected void btnAddToCart(object sender, EventArgs e)
-    {
-        System.Diagnostics.Debug.WriteLine("add to cart");
-        // do something
-    }
 
+   
     protected void Page_Load(object sender, EventArgs e)
-    {
-        
-
+    {        
         string pid = Request.QueryString["pid"];
         //parse to int 
-        Int32.TryParse(pid, out pid_int);
+        //Int32.TryParse(pid, out pid_int);
+        details = new ProductDetails(pid);
+        XmlDocument doc = new XmlDocument();
+        doc.Load(Server.MapPath("Products.xml"));
+        details.GetProductById(pid, doc);
 
-        GetProductById(pid);
-        System.Diagnostics.Debug.WriteLine(currentProduct.GetCategory());
+        //GetProductById(pid);
+        //System.Diagnostics.Debug.WriteLine(currentProduct.GetCategory());
 
         XsltArgumentList xslArg = new XsltArgumentList();
         xslArg.AddParam("product", "", "" + pid);
-        this.Xml1.TransformArgumentList = xslArg;
+        //this.Xml1.TransformArgumentList = xslArg;
     }
 
 
@@ -73,14 +46,14 @@ public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Pag
         tempCart = (ArrayList)Session["cart"];
 
         //add current  product to cart.
-        tempCart.Add(currentProduct);
+        tempCart.Add(details.currentProduct);
 
         
 
 
         Session["cart"] = tempCart;
         Response.Redirect("Cart.aspx");
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", currentProduct.GetName() + " added to cart", true);
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", details.currentProduct.GetName() + " added to cart", true);
 
 
     }

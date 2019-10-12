@@ -11,23 +11,38 @@ public partial class Kudell0061060303_cart : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         int total = 0;
-        test.InnerHtml = "<br/>Cart Items:<br/>";
-        if (Session["cart"] != null)
-        {
+
+
+
+
+        //if (Session["cart"] != null)
+        //{
+        //try
+        //{
+        try { 
             ArrayList tempCart = new ArrayList();
             tempCart = (ArrayList)Session["cart"];
-
-        
             foreach (Product p in tempCart)
             {
                 test.InnerHtml += "<br/>Product: " + p.GetName();
                 total += p.GetPrice();
             }
+            test.InnerHtml = "<br/>Cart Items:<br/>";
             test.InnerHtml += "<br/><br/>total: $" + total;
         }
-        else{
-            test.InnerHtml += "<br/>Cart is empty!";
+        catch (NullReferenceException)
+        {
+            test.InnerHtml = "<br/>Cart is empty!";
         }
+        finally
+        {
+            test.InnerHtml = "<br/>Cart is empty!";
+        }
+
+
+       
+
+
     }
 
 }

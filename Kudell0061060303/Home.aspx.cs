@@ -19,22 +19,5 @@ public partial class CIS2003_Kudell0061060303_Home : System.Web.UI.Page
             Session["cart"] = cart;
         }
         
-        //Session["cart"] = cart;
-//ArrayList cart = new ArrayList();
-        
-//        Session["cart"] = cart;
-
-       // ArrayList tempCart = new ArrayList();
-        //tempCart = (ArrayList)Session["cart"];
-
-        //tempCart.Add("test");
-        //tempCart.Add("nice");
-
-        //Session["cart"] = tempCart;
-
-
-
-
-
     }
 }

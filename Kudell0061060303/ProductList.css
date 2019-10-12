@@ -1,0 +1,22 @@
+﻿body {
+}
+
+#product_container {
+    padding-top: 2%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#product {
+    width: 20%;
+    display: inline-grid;
+    grid-gap:50px;
+    padding: 7%;
+    border:solid;
+}
+
+#brand, #name{
+    font-weight: 300;
+}
+
+

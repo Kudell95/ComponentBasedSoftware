@@ -12,7 +12,9 @@
         <TUser:navbar ID="Header" runat="server" />
         <br />
         <div id="product_info">        
-        <asp:Xml ID="Xml1" runat="server" DocumentSource="~/Kudell0061060303/Products.xml" TransformSource="~/Kudell0061060303/details.xslt"></asp:Xml>
+            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Kudell0061060303/Products.xml" TransformFile="~/Kudell0061060303/productlist.xslt"></asp:XmlDataSource>
+            <asp:ListView ID="ListView1" runat="server" DataSourceID="XmlDataSource1">
+            </asp:ListView>
         <br /> <br />    
         <input type="button" id="Button1" runat="server" onServerClick="Button1_Click1" value="Add To Cart"/>
             
