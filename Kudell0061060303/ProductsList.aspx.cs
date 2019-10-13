@@ -19,7 +19,7 @@ public partial class Assignment_Default : System.Web.UI.Page
         //}
         XsltArgumentList xslArg = new XsltArgumentList();
         xslArg.AddParam("category", "", "" + cat);
-        this.Xml1.TransformArgumentList = xslArg;
+        //this.Xml1.TransformArgumentList = xslArg;
     }
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,5 +44,15 @@ public partial class Assignment_Default : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
        
+    }
+
+    protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void ListView1_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+
     }
 }

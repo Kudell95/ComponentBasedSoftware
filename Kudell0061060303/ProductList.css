@@ -8,10 +8,11 @@
 }
 
 #product {
-    width: 20%;
+    width: 10%;
     display: inline-grid;
-    grid-gap:50px;
-    padding: 7%;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+   
     border:solid;
 }
 

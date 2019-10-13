@@ -14,10 +14,105 @@
 </head>
 <body>
     
-    <form id="form1" runat="server">
+            <form id="form1" runat="server">
+                
      <TUser:navbar ID="Header" runat="server" />
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="AccessDataSource1" GroupItemCount="3">
+                    <EditItemTemplate>
+                        <td runat="server" style="background-color: #FFCC66;color: #000080;">name:
+                            <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
+                            <br />price:
+                            <asp:TextBox ID="priceTextBox" runat="server" Text='<%# Bind("price") %>' />
+                            <br />brand:
+                            <asp:TextBox ID="brandTextBox" runat="server" Text='<%# Bind("brand") %>' />
+                            <br />category:
+                            <asp:TextBox ID="categoryTextBox" runat="server" Text='<%# Bind("category") %>' />
+                            <br />
+                            <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                            <br />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                            <br /></td>
+                    </EditItemTemplate>
+                    <EmptyDataTemplate>
+                        <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
+                            <tr>
+                                <td>No data was returned.</td>
+                            </tr>
+                        </table>
+                    </EmptyDataTemplate>
+                    <EmptyItemTemplate>
+<td runat="server" />
+                    </EmptyItemTemplate>
+                    <GroupTemplate>
+                        <tr id="itemPlaceholderContainer" runat="server">
+                            <td id="itemPlaceholder" runat="server"></td>
+                        </tr>
+                    </GroupTemplate>
+                    <InsertItemTemplate>
+                        <td runat="server" style="">name:
+                            <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
+                            <br />price:
+                            <asp:TextBox ID="priceTextBox" runat="server" Text='<%# Bind("price") %>' />
+                            <br />brand:
+                            <asp:TextBox ID="brandTextBox" runat="server" Text='<%# Bind("brand") %>' />
+                            <br />category:
+                            <asp:TextBox ID="categoryTextBox" runat="server" Text='<%# Bind("category") %>' />
+                            <br />
+                            <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                            <br />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                            <br /></td>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <td runat="server" style="background-color: #FFFBD6;color: #333333;">
+                            <img style="width:25px;height:auto;" src="img/<%# Eval("slug")%><%# Eval("imgtype")%>"/>
+                            <br />
+                            <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>'></asp:Label>
+                            &nbsp;<asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                            <br />price:
+                            <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
+                            <br />
+                            category:
+                            <asp:Label ID="categoryLabel" runat="server" Text='<%# Eval("category") %>' />
+                            <br /></td>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <table runat="server">
+                            <tr runat="server">
+                                <td runat="server">
+                                    <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                        <tr id="groupPlaceholder" runat="server">
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr runat="server">
+                                <td runat="server" style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
+                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
+                                        <Fields>
+                                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                            <asp:NumericPagerField />
+                                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        </Fields>
+                                    </asp:DataPager>
+                                </td>
+                            </tr>
+                        </table>
+                    </LayoutTemplate>
+                    <SelectedItemTemplate>
+                        <td runat="server" style="background-color: #FFCC66;font-weight: bold;color: #000080;">name:
+                            <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                            <br />price:
+                            <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
+                            <br />brand:
+                            <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>' />
+                            <br />category:
+                            <asp:Label ID="categoryLabel" runat="server" Text='<%# Eval("category") %>' />
+                            <br /></td>
+                    </SelectedItemTemplate>
+                </asp:ListView>
+                <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Kudell0061060303/Products.accdb" SelectCommand="SELECT [name], [price], [brand], [category], [productId], [slug], [imgtype] FROM [product]"></asp:AccessDataSource>
          <br />
-         <asp:Xml ID="Xml1" runat="server" DocumentSource="~/Kudell0061060303/Products.xml" TransformSource="~/Kudell0061060303/productlist.xslt"></asp:Xml>
     </form>
 </body>
 </html>

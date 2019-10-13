@@ -33,7 +33,7 @@ public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Pag
 
         XsltArgumentList xslArg = new XsltArgumentList();
         xslArg.AddParam("product", "", "" + pid);
-        //this.Xml1.TransformArgumentList = xslArg;
+        this.Xml1.TransformArgumentList = xslArg;
     }
 
 
