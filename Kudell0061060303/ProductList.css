@@ -9,6 +9,7 @@
 
 #product {
     width: 10%;
+    height: 300px auto;
     display: inline-grid;
     grid-column-gap: 50px;
     grid-row-gap: 50px;
@@ -19,5 +20,23 @@
 #brand, #name{
     font-weight: 300;
 }
+
+
+#item {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.items {
+    margin-left: 0 auto;
+    text-align: center;
+    padding: 3px;
+    width: 30% auto;
+    margin-right: auto;
+
+    margin-left: auto;
+}
+
 
 

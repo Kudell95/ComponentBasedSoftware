@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" type="text/css" href="ProductList.css"/>
     <title></title>
     <style type="text/css">
         #Select1 {
@@ -17,7 +18,8 @@
             <form id="form1" runat="server">
                 
      <TUser:navbar ID="Header" runat="server" />
-                <asp:ListView ID="ListView1" runat="server" DataSourceID="AccessDataSource1" GroupItemCount="3">
+                <div id="item_container" >
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="AccessDataSource1" GroupItemCount="3" align="center">
                     <EditItemTemplate>
                         <td runat="server" style="background-color: #FFCC66;color: #000080;">name:
                             <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
@@ -64,8 +66,9 @@
                             <br /></td>
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        <td runat="server" style="background-color: #FFFBD6;color: #333333;">
-                            <img style="width:25px;height:auto;" src="img/<%# Eval("slug")%><%# Eval("imgtype")%>"/>
+                        <div id="item">
+                        <td runat="server" style="background-color: #FFFBD6;color: #333333;" >
+                            <img style="width:100px;height:100px;" src="img/<%# Eval("slug")%><%# Eval("imgtype")%>"/>
                             <br />
                             <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>'></asp:Label>
                             &nbsp;<asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
@@ -75,13 +78,15 @@
                             category:
                             <asp:Label ID="categoryLabel" runat="server" Text='<%# Eval("category") %>' />
                             <br /></td>
+
+                        </div>
                     </ItemTemplate>
                     <LayoutTemplate>
-                        <table runat="server">
-                            <tr runat="server">
-                                <td runat="server">
+                        <table runat="server" class="items" align ="center">
+                            <tr runat="server" align ="center">
+                                <td runat="server"  style="padding:15px;" align ="center">
                                     <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
-                                        <tr id="groupPlaceholder" runat="server">
+                                        <tr id="groupPlaceholder" runat="server" >
                                         </tr>
                                     </table>
                                 </td>
@@ -111,6 +116,7 @@
                             <br /></td>
                     </SelectedItemTemplate>
                 </asp:ListView>
+                </div>
                 <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Kudell0061060303/Products.accdb" SelectCommand="SELECT [name], [price], [brand], [category], [productId], [slug], [imgtype] FROM [product]"></asp:AccessDataSource>
          <br />
     </form>
