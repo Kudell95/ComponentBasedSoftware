@@ -23,6 +23,9 @@
 
 
 #item {
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-right: 75px;
     display: block;
     margin-left: auto;
     margin-right: auto;

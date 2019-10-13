@@ -51,7 +51,7 @@
                         </tr>
                     </GroupTemplate>
                     <InsertItemTemplate>
-                        <td runat="server" style="">name:
+                        <td runat="server" style="">
                             <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
                             <br />price:
                             <asp:TextBox ID="priceTextBox" runat="server" Text='<%# Bind("price") %>' />
@@ -66,10 +66,12 @@
                             <br /></td>
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        <div id="item">
+                        
                         <td runat="server" style="background-color: #FFFBD6;color: #333333;" >
-                            <img style="width:100px;height:100px;" src="img/<%# Eval("slug")%><%# Eval("imgtype")%>"/>
+                            <div id="item">
+                            <a href="ProductDetails.aspx?pid=<%#Eval("productId")%>"><img style="width:200px;height:200px;" src="img/<%# Eval("slug")%><%# Eval("imgtype")%>"/></a>
                             <br />
+                            
                             <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>'></asp:Label>
                             &nbsp;<asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
                             <br />price:
@@ -77,9 +79,10 @@
                             <br />
                             category:
                             <asp:Label ID="categoryLabel" runat="server" Text='<%# Eval("category") %>' />
+                            </div>
                             <br /></td>
 
-                        </div>
+                        
                     </ItemTemplate>
                     <LayoutTemplate>
                         <table runat="server" class="items" align ="center">
