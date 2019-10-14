@@ -43,7 +43,7 @@ public partial class Assignment_Default : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-       
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
     }
 
     protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,6 +52,38 @@ public partial class Assignment_Default : System.Web.UI.Page
     }
 
     protected void ListView1_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void ListView1_SelectedIndexChanged2(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void ListView_OnItemCommand(object sender, ListViewCommandEventArgs e)
+    {
+        // save button Clicked
+        if (e.CommandName == "AddToCart")
+        {
+            ListViewItem itemClicked = e.Item;
+           
+            // Find Controls/Retrieve values from the item  here
+
+            //itemClicked
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
+        }
+    }
+
+    protected void Button1_Click1(object sender, EventArgs e)
+    {
+        //ListViewItem itemClicked = e.Item;
+        //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
+        //int id, string category, string name, int price
+        //Product currentProduct = new Product(Eval("productid"), Eval("category"), Eval("name"), Eval("price"));
+    }
+
+    public void AddToCartByID(int pid)
     {
 
     }

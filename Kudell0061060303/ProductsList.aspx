@@ -19,7 +19,7 @@
                 
      <TUser:navbar ID="Header" runat="server" />
                 <div id="item_container" >
-                <asp:ListView ID="ListView1" runat="server" DataSourceID="AccessDataSource1" GroupItemCount="3" align="center">
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="AccessDataSource1" OnItemCommand="ListView_OnItemCommand" GroupItemCount="3" align="center">
                     <EditItemTemplate>
                         <td runat="server" style="background-color: #FFCC66;color: #000080;">name:
                             <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
@@ -43,7 +43,7 @@
                         </table>
                     </EmptyDataTemplate>
                     <EmptyItemTemplate>
-<td runat="server" />
+                    <td runat="server" />
                     </EmptyItemTemplate>
                     <GroupTemplate>
                         <tr id="itemPlaceholderContainer" runat="server">
@@ -77,8 +77,7 @@
                             <br />price:
                             <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
                             <br />
-                            category:
-                            <asp:Label ID="categoryLabel" runat="server" Text='<%# Eval("category") %>' />
+                            <asp:Button ID="Button1" runat="server" CommandName="AddToCart" Text="Add To Cart" />
                             </div>
                             <br /></td>
 
@@ -121,6 +120,7 @@
                 </asp:ListView>
                 </div>
                 <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Kudell0061060303/Products.accdb" SelectCommand="SELECT [name], [price], [brand], [category], [productId], [slug], [imgtype] FROM [product]"></asp:AccessDataSource>
+                
          <br />
     </form>
 </body>

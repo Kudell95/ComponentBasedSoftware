@@ -30,11 +30,12 @@ public class ProductDetails
     {
         Int32.TryParse(pid, out pid_int);
         Pid = pid;
+
     }
 
     
 
-    public void GetProductById(string pid, XmlDocument doc)
+    public Product GetProductById(string pid, XmlDocument doc)
     {
         //int pid_int;
         int price;
@@ -53,12 +54,14 @@ public class ProductDetails
                 //apply xml data to the current product object.
                 Int32.TryParse(elemList[i].ChildNodes[2].InnerText, out price);
                 System.Diagnostics.Debug.WriteLine(elemList[i].ChildNodes[1].InnerText);
-                currentProduct = new Product(pid_int, elemList[i].Attributes["category"].Value, elemList[i].ChildNodes[1].InnerText, price);
+                return new Product(pid_int, elemList[i].Attributes["category"].Value, elemList[i].ChildNodes[1].InnerText, price);
 
             }
 
 
         }
+
+        return new Product();
     }
 
 

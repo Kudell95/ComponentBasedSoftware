@@ -26,7 +26,7 @@ public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Pag
         details = new ProductDetails(pid);
         XmlDocument doc = new XmlDocument();
         doc.Load(Server.MapPath("Products.xml"));
-        details.GetProductById(pid, doc);
+        details.currentProduct = details.GetProductById(pid, doc);
 
         //GetProductById(pid);
         //System.Diagnostics.Debug.WriteLine(currentProduct.GetCategory());
@@ -53,7 +53,7 @@ public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Pag
 
         Session["cart"] = tempCart;
         Response.Redirect("Cart.aspx");
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", details.currentProduct.GetName() + " added to cart", true);
+        //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", details.currentProduct.GetName() + " added to cart", true);
 
 
     }
