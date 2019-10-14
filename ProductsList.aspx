@@ -119,7 +119,7 @@
                     </SelectedItemTemplate>
                 </asp:ListView>
                 </div>
-                <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Kudell0061060303/Products.accdb" SelectCommand="SELECT [name], [price], [brand], [category], [productId], [slug], [imgtype] FROM [product]"></asp:AccessDataSource>
+                <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Products.accdb" SelectCommand="SELECT [name], [price], [brand], [category], [productId], [slug], [imgtype] FROM [product]"></asp:AccessDataSource>
                 
          <br />
     </form>
