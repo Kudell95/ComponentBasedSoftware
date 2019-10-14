@@ -73,7 +73,7 @@
                             <br />
                             
                             <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>'></asp:Label>
-                            &nbsp;<asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                            <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
                             <br />price:
                             <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
                             <br />
