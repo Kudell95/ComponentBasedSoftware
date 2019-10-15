@@ -14,10 +14,10 @@ public partial class CIS2003_Kudell0061060303_Home : System.Web.UI.Page
         //initialize cart
         ArrayList cart = new ArrayList();
 
-        if(Session["cart"] == null)
+        if (Session["cart"] == null)
         {
             Session["cart"] = cart;
         }
-        
+
     }
 }

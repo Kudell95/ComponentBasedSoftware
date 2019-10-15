@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WebUserControl.ascx.cs" Inherits="CIS2003_Kudell0061060303_WebUserControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="navbar.ascx.cs" Inherits="CIS2003_Kudell0061060303_WebUserControl" %>
 <script>
     function myFunction() {
         document.getElementById("categories").classList.toggle("show");
@@ -20,13 +20,16 @@
 <div id="NavMenu">
     
                 <div class="navbar">
-                  
+                  <asp:Image ImageAlign="Left" id="logo" runat="server" src="img/logo.png" Height="42px" Width="43px"/>
                   <a href="Home.aspx" id="Active">Home</a>
                  
                       <div class="dropdown">
-                      <button class="dropbtn" onclick="myFunction()">Products
+                       <button class="dropbtn" onclick="myFunction()" >Products
+                         
                         <i class="fa fa-caret-down"></i>
+                         
                       </button>
+                      
                             <div class="dropdown-content" id="categories">
                             <a href="ProductsList.aspx?category=Guitars">Guitars</a>
                             <a href="ProductsList.aspx?category=Keys">Keys</a>

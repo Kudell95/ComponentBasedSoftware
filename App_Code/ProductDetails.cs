@@ -33,7 +33,7 @@ public class ProductDetails
 
     }
 
-    
+
 
     public Product GetProductById(string pid, XmlDocument doc)
     {
@@ -63,6 +63,11 @@ public class ProductDetails
 
         return new Product();
     }
+
+
+
+    //TODO: add accdb compatible getproductbyid function
+
 
 
 

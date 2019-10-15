@@ -17,7 +17,7 @@
     <price>900</price>
     <brand>Fender</brand>
     <slug>guitars_fender_bass</slug>
-    <imgtype>.jpg</imgtype>
+    <imgtype>.png</imgtype>
   </product>
   
   <product category="Guitars">
@@ -26,7 +26,7 @@
     <price>1200</price>
     <brand>Gibson</brand>
     <slug>guitars_gibson_lespaul</slug>
-    <imgtype>.jpg</imgtype>
+    <imgtype>.png</imgtype>
   </product>
   
   <product category="Guitars">
@@ -35,7 +35,7 @@
     <price>1200</price>
     <brand>Fender</brand>
     <slug>guitars_fender_telecaster</slug>
-    <imgtype>.jpg</imgtype>
+    <imgtype>.png</imgtype>
   </product>
   
   <!--Keys section-->

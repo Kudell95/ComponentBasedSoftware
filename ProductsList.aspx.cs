@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,55 +12,24 @@ public partial class Assignment_Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string cat = Request.QueryString["category"];
+
+        if (cat == null)
+        {
+            Response.Redirect("ProductsList.aspx?category=%");          
+        }
+        //NOTE: this is probably not the best way to do this, but it fixes the issue.
         
-        //if (cat == null)
-        //{
-        //    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')" + cat, true);
-        //    //cat = "*";
-        //}
-        XsltArgumentList xslArg = new XsltArgumentList();
-        xslArg.AddParam("category", "", "" + cat);
-        //this.Xml1.TransformArgumentList = xslArg;
     }
 
-    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-    {
+  
 
-    }
-
-
-    // protected void Button1_Click(object sender, EventArgs e)
-    // {
-    // This is being read from the same folder as this page is in.(only for demo purpose)  
-    // In real applications this xml might be coming from some external source or database.  
-    //   string xmlString = File.ReadAllText(Server.MapPath("XMLFile1.xml"));
-
-    // Define the contents of the XML control  
-    //  Xml1.DocumentContent = xmlString;
-
-    // Specify the XSL file to be used for transformation.  
-    // Xml1.TransformSource = Server.MapPath("XSLTFile1.xslt");
+  
+    //protected void Button1_Click(object sender, EventArgs e)
+    //{
+    //    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
     //}
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
-    }
-
-    protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void ListView1_SelectedIndexChanged1(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void ListView1_SelectedIndexChanged2(object sender, EventArgs e)
-    {
-
-    }
+   
 
     protected void ListView_OnItemCommand(object sender, ListViewCommandEventArgs e)
     {
@@ -67,11 +37,27 @@ public partial class Assignment_Default : System.Web.UI.Page
         if (e.CommandName == "AddToCart")
         {
             ListViewItem itemClicked = e.Item;
-           
-            // Find Controls/Retrieve values from the item  here
 
-            //itemClicked
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
+            string arg = e.CommandArgument.ToString();
+            System.Diagnostics.Debug.WriteLine(arg);
+
+            string[] details = arg.Split(',');
+
+
+            ArrayList tempCart = new ArrayList();
+            tempCart = (ArrayList)Session["cart"];
+
+
+            //add current  product to cart.
+            Product tempProduct = new Product(Int32.Parse(details[0]), details[1], details[2], Int32.Parse(details[3]));
+
+            tempCart.Add(tempProduct);
+
+
+            System.Diagnostics.Debug.WriteLine(tempProduct.GetName());
+
+            Session["cart"] = tempCart;
+
         }
     }
 
@@ -83,8 +69,8 @@ public partial class Assignment_Default : System.Web.UI.Page
         //Product currentProduct = new Product(Eval("productid"), Eval("category"), Eval("name"), Eval("price"));
     }
 
-    public void AddToCartByID(int pid)
-    {
+    //public void AddToCartByID(int pid)
+    //{
 
-    }
+    //}
 }

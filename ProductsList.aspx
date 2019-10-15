@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ProductsList.aspx.cs" Inherits="Assignment_Default" %>
-<%@ Register Src="WebUserControl.ascx" TagName="navbar" TagPrefix="TUser" %>
+<%@ Register Src="navbar.ascx" TagName="navbar" TagPrefix="TUser" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,7 +15,7 @@
 </head>
 <body>
     
-            <form id="form1" runat="server">
+   <form id="form1" runat="server">
                 
      <TUser:navbar ID="Header" runat="server" />
                 <div id="item_container" >
@@ -43,7 +43,7 @@
                         </table>
                     </EmptyDataTemplate>
                     <EmptyItemTemplate>
-                    <td runat="server" />
+                        <td runat="server" />
                     </EmptyItemTemplate>
                     <GroupTemplate>
                         <tr id="itemPlaceholderContainer" runat="server">
@@ -68,8 +68,9 @@
                     <ItemTemplate>
                         
                         <td runat="server" style="background-color: #FFFBD6;color: #333333;" >
+                            <a href="ProductDetails.aspx?pid=<%#Eval("productId")%>">
                             <div id="item">
-                            <a href="ProductDetails.aspx?pid=<%#Eval("productId")%>"><img style="width:200px;height:200px;" src="img/<%# Eval("slug")%><%# Eval("imgtype")%>"/></a>
+                            <img style="width:200px;height:200px;" src="img/<%# Eval("slug")%><%# Eval("imgtype")%>"/>
                             <br />
                             
                             <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>'></asp:Label>
@@ -77,10 +78,18 @@
                             <br />price:
                             <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
                             <br />
-                            <asp:Button ID="Button1" runat="server" CommandName="AddToCart" Text="Add To Cart" />
+                            <asp:Button
+                                ID="Button1"
+                                runat="server"
+                                CommandName="AddToCart"
+                                CommandArgument='<%#Eval("productId") + "," + Eval("category") + "," + Eval("name") + "," + Eval("price")%>'
+                                Text="Add To Cart"
+                                
+                            />
                             </div>
+                            </a>
                             <br /></td>
-
+                        
                         
                     </ItemTemplate>
                     <LayoutTemplate>
@@ -119,7 +128,11 @@
                     </SelectedItemTemplate>
                 </asp:ListView>
                 </div>
-                <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Products.accdb" SelectCommand="SELECT [name], [price], [brand], [category], [productId], [slug], [imgtype] FROM [product]"></asp:AccessDataSource>
+                <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Products.accdb" SelectCommand="SELECT [name], [price], [brand], [category], [productId], [slug], [imgtype] FROM [product] WHERE ([category] LIKE '%' + ? + '%')">
+                    <SelectParameters>
+                        <asp:QueryStringParameter Name="category" QueryStringField="category" Type="String" />
+                    </SelectParameters>
+       </asp:AccessDataSource>
                 
          <br />
     </form>

@@ -28,12 +28,12 @@ public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Pag
         doc.Load(Server.MapPath("Products.xml"));
         details.currentProduct = details.GetProductById(pid, doc);
 
-        //GetProductById(pid);
+        //Product Currentproduct = detGetProductById(pid);
         //System.Diagnostics.Debug.WriteLine(currentProduct.GetCategory());
 
         XsltArgumentList xslArg = new XsltArgumentList();
         xslArg.AddParam("product", "", "" + pid);
-        this.Xml1.TransformArgumentList = xslArg;
+        //this.Xml1.TransformArgumentList = xslArg;
     }
 
 
