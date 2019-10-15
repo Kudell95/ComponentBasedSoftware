@@ -2,6 +2,7 @@
 <script>
     function myFunction() {
         document.getElementById("categories").classList.toggle("show");
+        window.location.href = "ProductList.aspx?category=%";
     }
 
 
@@ -24,10 +25,8 @@
                   <a href="Home.aspx" id="Active">Home</a>
                  
                       <div class="dropdown">
-                       <button class="dropbtn" onclick="myFunction()" >Products
-                         
-                        <i class="fa fa-caret-down"></i>
-                         
+                       <button class="dropbtn"  onclick="myFunction()" >&nbsp;<i class="fa fa-caret-down"></i>
+                         <a style="margin:0;padding:0;" href="ProductsList.aspx?category=%" id="products">Products</a>
                       </button>
                       
                             <div class="dropdown-content" id="categories">

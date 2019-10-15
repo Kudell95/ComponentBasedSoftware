@@ -49,6 +49,10 @@
   text-decoration: none;
 }
 
+#products{
+    margin: 0;
+    height: 2px;
+}
 
 .dropdown {
     float: left;
