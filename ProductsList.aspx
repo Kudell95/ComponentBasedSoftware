@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
     <link rel="stylesheet" type="text/css" href="ProductList.css"/>
     <title></title>
     <style type="text/css">
@@ -19,16 +20,10 @@
                 
      <TUser:navbar ID="Header" runat="server" />
                 <div id="item_container" >
-                <asp:ListView ID="ListView1" runat="server" DataSourceID="AccessDataSource1" OnItemCommand="ListView_OnItemCommand" GroupItemCount="3" align="center">
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="XmlDataSource1" OnItemCommand="ListView_OnItemCommand" GroupItemCount="3" align="center">
                     <EditItemTemplate>
-                        <td runat="server" style="background-color: #FFCC66;color: #000080;">name:
+                        <td runat="server" style="background-color: #FFCC66;color: #000080;">category:
                             <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
-                            <br />price:
-                            <asp:TextBox ID="priceTextBox" runat="server" Text='<%# Bind("price") %>' />
-                            <br />brand:
-                            <asp:TextBox ID="brandTextBox" runat="server" Text='<%# Bind("brand") %>' />
-                            <br />category:
-                            <asp:TextBox ID="categoryTextBox" runat="server" Text='<%# Bind("category") %>' />
                             <br />
                             <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                             <br />
@@ -52,13 +47,8 @@
                     </GroupTemplate>
                     <InsertItemTemplate>
                         <td runat="server" style="">
+                            category:
                             <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
-                            <br />price:
-                            <asp:TextBox ID="priceTextBox" runat="server" Text='<%# Bind("price") %>' />
-                            <br />brand:
-                            <asp:TextBox ID="brandTextBox" runat="server" Text='<%# Bind("brand") %>' />
-                            <br />category:
-                            <asp:TextBox ID="categoryTextBox" runat="server" Text='<%# Bind("category") %>' />
                             <br />
                             <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
                             <br />
@@ -68,27 +58,29 @@
                     <ItemTemplate>
                         
                         <td runat="server" style="background-color: #FFFBD6;color: #333333;" >
-                            <a href="ProductDetails.aspx?pid=<%#Eval("productId")%>">
+                              <a href="ProductDetails.aspx?pid=<%#XPath("productId")%>">
                             <div id="item">
-                            <img style="width:200px;height:200px;" src="img/<%# Eval("slug")%><%# Eval("imgtype")%>"/>
+                            <img style="width:200px;height:200px;" src="img/<%# XPath("slug")%><%# XPath("imgtype")%>"/>
                             <br />
                             
-                            <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>'></asp:Label>
-                            <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                            <asp:Label ID="brandLabel" runat="server" Text='<%# XPath("brand") %>'></asp:Label>
+                            <asp:Label ID="nameLabel" runat="server" Text='<%# XPath("name") %>' />
                             <br />price:
-                            <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
+                            <asp:Label ID="priceLabel" runat="server" Text='<%# XPath("price") %>' />
                             <br />
                             <asp:Button
                                 ID="Button1"
                                 runat="server"
                                 CommandName="AddToCart"
-                                CommandArgument='<%#Eval("productId") + "," + Eval("category") + "," + Eval("name") + "," + Eval("price")%>'
+                                CommandArgument='<%#XPath("productId") + "," + Eval("category") + "," + XPath("name") + "," + XPath("price")%>'
                                 Text="Add To Cart"
                                 
                             />
                             </div>
                             </a>
-                            <br /></td>
+                            <br />
+
+                        </td>
                         
                         
                     </ItemTemplate>
@@ -116,17 +108,12 @@
                         </table>
                     </LayoutTemplate>
                     <SelectedItemTemplate>
-                        <td runat="server" style="background-color: #FFCC66;font-weight: bold;color: #000080;">name:
+                        <td runat="server" style="background-color: #FFCC66;font-weight: bold;color: #000080;">category:
                             <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
-                            <br />price:
-                            <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
-                            <br />brand:
-                            <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>' />
-                            <br />category:
-                            <asp:Label ID="categoryLabel" runat="server" Text='<%# Eval("category") %>' />
                             <br /></td>
                     </SelectedItemTemplate>
                 </asp:ListView>
+                    <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Products.xml"></asp:XmlDataSource>
                 </div>
                 <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Products.accdb" SelectCommand="SELECT [name], [price], [brand], [category], [productId], [slug], [imgtype] FROM [product] WHERE ([category] LIKE '%' + ? + '%')">
                     <SelectParameters>
