@@ -15,13 +15,13 @@
         <br />
         <br />
         <div id="product_info">
-        <asp:DataList ID="DataList1" runat="server" DataSourceID="AccessDataSource1">
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="XmlDataSource1">
             <ItemTemplate>
                 
-                <img style="width:200px;height:200px;" src="img/<%# Eval("slug")%><%# Eval("imgtype")%>"/>
+                <img style="width:200px;height:200px;" src="img/<%# XPath("slug")%><%# XPath("imgtype")%>"/>
                 <br />
                 <h1>
-                <asp:Label ID="brandLabel" runat="server" Text='<%# Eval("brand") %>' /> <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                <asp:Label ID="brandLabel" runat="server" Text='<%# XPath("brand") %>' /> <asp:Label ID="nameLabel" runat="server" Text='<%# XPath("name") %>' />
                 </h1>
                 <br />
                 <p>
@@ -32,7 +32,7 @@
                 <br/>
                 <h2>
                 price: $
-                <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
+                <asp:Label ID="priceLabel" runat="server" Text='<%# XPath("price") %>' />
                 </h2>
                 <br />
                 
@@ -48,6 +48,7 @@
                     <asp:QueryStringParameter Name="productId" QueryStringField="pid" Type="String" />
                 </SelectParameters>
             </asp:AccessDataSource>
+            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Products.xml"></asp:XmlDataSource>
         <br /> <br />    
         <input type="button" id="Button1" runat="server" onServerClick="Button1_Click1" value="Add To Cart"/>        
      
