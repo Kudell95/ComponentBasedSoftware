@@ -13,11 +13,14 @@ public partial class Assignment_Default : System.Web.UI.Page
     {
         string cat = Request.QueryString["category"];
 
-        if (cat == null)
+        if (cat != null)
         {
-            Response.Redirect("ProductsList.aspx?category=%");          
+            XmlDataSource1.XPath = "products/product[@category='" + cat + "']";
+            //    Response.Redirect("ProductsList.aspx?category=*");          
         }
         //NOTE: this is probably not the best way to do this, but it fixes the issue.
+
+
         
     }
 
@@ -67,6 +70,13 @@ public partial class Assignment_Default : System.Web.UI.Page
         //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
         //int id, string category, string name, int price
         //Product currentProduct = new Product(Eval("productid"), Eval("category"), Eval("name"), Eval("price"));
+    }
+
+    protected string GetXpathValue()
+    {
+        string cat = Request.QueryString["category"];
+        string XpathVal = "products/product[@category='Guitars']";
+        return XpathVal;
     }
 
     //public void AddToCartByID(int pid)

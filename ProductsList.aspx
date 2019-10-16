@@ -113,13 +113,9 @@
                             <br /></td>
                     </SelectedItemTemplate>
                 </asp:ListView>
-                    <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Products.xml"></asp:XmlDataSource>
+                    <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Products.xml" ></asp:XmlDataSource>
                 </div>
-                <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Products.accdb" SelectCommand="SELECT [name], [price], [brand], [category], [productId], [slug], [imgtype] FROM [product] WHERE ([category] LIKE '%' + ? + '%')">
-                    <SelectParameters>
-                        <asp:QueryStringParameter Name="category" QueryStringField="category" Type="String" />
-                    </SelectParameters>
-       </asp:AccessDataSource>
+                
                 
          <br />
     </form>

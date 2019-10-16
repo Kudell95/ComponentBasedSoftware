@@ -43,11 +43,7 @@
         </asp:DataList>
         <br />
                
-            <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/Products.accdb" SelectCommand="SELECT * FROM [product] WHERE ([productId] = ?)">
-                <SelectParameters>
-                    <asp:QueryStringParameter Name="productId" QueryStringField="pid" Type="String" />
-                </SelectParameters>
-            </asp:AccessDataSource>
+            
             <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Products.xml"></asp:XmlDataSource>
         <br /> <br />    
         <input type="button" id="Button1" runat="server" onServerClick="Button1_Click1" value="Add To Cart"/>        
