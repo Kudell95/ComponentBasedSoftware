@@ -61,6 +61,8 @@ public partial class Assignment_Default : System.Web.UI.Page
 
             Session["cart"] = tempCart;
 
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Item added to cart');", true);
+
         }
     }
 

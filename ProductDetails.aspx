@@ -14,7 +14,7 @@
         <TUser:navbar ID="Header" runat="server" />
         <br />
         <br />
-        <div id="product_info" style="background:#FFFBD6;">
+        <div id="product_info" style="background:#c0e0fc;">
         <asp:DataList ID="DataList1" runat="server" DataSourceID="XmlDataSource1">
             <ItemTemplate >
                 

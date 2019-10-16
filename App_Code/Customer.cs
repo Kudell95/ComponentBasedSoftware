@@ -8,8 +8,12 @@ using System.Web;
 /// </summary>
 public class Customer
 {
-    private int Id;
-    private string Fname, Lname;
+    //private int Id;
+    private string Fname, Lname, PhoneNumber;
+
+    private Payment Custpayment;
+    public Address Custaddress;
+
     public Customer()
     {
         //
@@ -17,14 +21,16 @@ public class Customer
         //
     }
 
-    public Customer(int id, string fname, string lname)
+    public Customer( string fname, string lname, Payment payment, Address address)
     {
-        Id = id;
+        //Id = id;
         Fname = fname;
         Lname = lname;
+        Custpayment = payment;
+        Custaddress = address;
     }
 
     public string GetFName() { return Fname; }
     public string GetLName() { return Lname; }
-    public int GetId() { return Id; }
+    //public int GetId() { return Id; }
 }

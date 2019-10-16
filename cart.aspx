@@ -13,8 +13,9 @@
 
         <br />
         <br />
+        <div style="padding-left:2%;">
         <asp:Label ID="Label1" runat="server" Text="Cart Items: "></asp:Label>
-        <asp:Table ID="myTable" runat="server" Width="30%">
+        <asp:Table ID="myTable" runat="server" Width="23%">
             
         <asp:TableRow>
             <asp:TableCell>Product</asp:TableCell>
@@ -29,7 +30,7 @@
 
         </div>
         <asp:Button ID="CheckOut" runat="server" OnClick="Checkout" Text="Checkout" />
-        
+        </div>
     </form>
 </body>
 </html>

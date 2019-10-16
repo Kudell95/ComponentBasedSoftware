@@ -57,7 +57,7 @@
                     </InsertItemTemplate>
                     <ItemTemplate>
                         
-                        <td runat="server" style="background-color: #FFFBD6;color: #333333;" >
+                        <td runat="server" style="background-color: #c0e0fc;color: #333333;" >
                               <a href="ProductDetails.aspx?pid=<%#XPath("productId")%>">
                             <div id="item">
                             <img style="width:200px;height:200px;" src="img/<%# XPath("slug")%><%# XPath("imgtype")%>"/>

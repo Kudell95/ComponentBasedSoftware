@@ -12,13 +12,6 @@ public partial class Kudell0061060303_cart : System.Web.UI.Page
     {
         int total = 0;
 
-
-
-
-        //if (Session["cart"] != null)
-        //{
-        //try
-        //{
         try
         {
             ArrayList tempCart = new ArrayList();
@@ -104,6 +97,11 @@ public partial class Kudell0061060303_cart : System.Web.UI.Page
 
     protected void Checkout(object sender, EventArgs e)
     {
-
+        ArrayList tempCart = new ArrayList();
+        tempCart = (ArrayList)Session["cart"];
+        if(tempCart.Count != 0) 
+        { 
+        Response.Redirect("Checkout.aspx");
+        }
     }
 }
