@@ -14,9 +14,9 @@
         <TUser:navbar ID="Header" runat="server" />
         <br />
         <br />
-        <div id="product_info">
+        <div id="product_info" style="background:#FFFBD6;">
         <asp:DataList ID="DataList1" runat="server" DataSourceID="XmlDataSource1">
-            <ItemTemplate>
+            <ItemTemplate >
                 
                 <img style="width:200px;height:200px;" src="img/<%# XPath("slug")%><%# XPath("imgtype")%>"/>
                 <br />

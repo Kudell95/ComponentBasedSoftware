@@ -21,6 +21,9 @@ public partial class CIS2003_Kudell0061060303_ProductDetails : System.Web.UI.Pag
     protected void Page_Load(object sender, EventArgs e)
     {        
         string pid = Request.QueryString["pid"];
+
+        XmlDataSource1.XPath = "products/product[productId='" + pid + "']";
+
         //parse to int 
         //Int32.TryParse(pid, out pid_int);
         details = new ProductDetails(pid);

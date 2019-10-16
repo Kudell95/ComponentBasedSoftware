@@ -17,4 +17,24 @@ public partial class Checkout : System.Web.UI.Page
         args.IsValid = false;
         System.Diagnostics.Debug.WriteLine("test");
     }
+
+
+    protected void Btnsubmit_Click(object sender, EventArgs e)
+    {
+        Page.Validate();
+
+        if (Page.IsValid)
+        {
+            System.Diagnostics.Debug.WriteLine("valid");
+            Response.Redirect("Home.aspx");
+            lblmsg.Text = "Thank You";
+        }
+        else
+        {
+
+            System.Diagnostics.Debug.WriteLine("not valid");
+            lblmsg.Text = "Fill up all the fields";
+        }
+    }
+
 }
